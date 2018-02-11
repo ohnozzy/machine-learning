@@ -12276,6 +12276,8 @@ Think about the pros and cons of adding more training points based on if the tra
 <p><strong>max_depth = 6: </strong></p>
 <p>As more data comes in, the score of the training curve decrease and that of the testing curve increase.</p>
 <p>Because there is a significant gap between the training curve and testing curve, a significant portion of the error is due to variance. As a result more training data points can help the model to perform better on the testing set.</p>
+<p>Put it in other words, the fact that the model perform significant better in training data than testing data shows that the model learned some patterns which happens by chance in the training data set. By increase the number of training data, we can eliminate those patterns. Since <code>max_depth = 3</code> achieves 0.8 on test set, <code>max_depth = 6</code> should also be able to get there. Because all models in <code>max_depth = 3</code> can be expressed as a model in <code>max_depth = 6</code>. Certainly, <code>max_depth = 6</code> may require a huge number of data to get there.</p>
+<p>Final remark, for the x-axis in the graph, I prefer log scale to linear scale. Because an increment of 100 data points has larger effect for a initial training data with 50 data points than one with 1000 data points.</p>
 
 </div>
 </div>
@@ -12676,7 +12678,9 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 <p>Price for Client 2 : $237,478.72</p>
 <p>Price for Client 3 : $931,636.36</p>
 <p>The prices seem reasonable.</p>
-<p>Client 3 has the highest <code>RM</code>, lowest <code>LSTAT</code> and <code>PTRATIO</code>, so it receives the highest price. On the other hand Client 2 has the lowest <code>RM</code>, highest <code>LSTAT</code> and <code>PTRATIO</code>, so it receives the lowest price.</p>
+<p>Client 3 has the highest <code>RM</code>, lowest <code>LSTAT</code> and <code>PTRATIO</code>, so it receives the highest price. 
+On the other hand Client 2 has the lowest <code>RM</code>, highest <code>LSTAT</code> and <code>PTRATIO</code>, so it receives the lowest price.
+For Client 1, all 3 attributes are between those of Client 2 and 3, so its price is expected to be in between Client 2 &amp; 3.</p>
 
 </div>
 </div>
